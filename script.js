@@ -160,7 +160,7 @@ function growTree() {
     const trunkHeight = canvasHeight * 1; // AÚN MÁS GRANDE - 70% de la página
     
     // 🎯 Ajustar aquí para mover los corazones más ABAJO en el eje Y
-    const treeTop = trunkY - trunkHeight + 200; // +100 mueve TODO más abajo
+    const treeTop = trunkY - trunkHeight + 100; // +100 mueve TODO más abajo
     // Aumenta el número para mover MÁS abajo (ej: +150, +200)
     // Disminuye el número para mover menos abajo (ej: +50, +0)
     
