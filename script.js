@@ -243,7 +243,7 @@ function generateTreeStructure(centerX, centerY) {
         const y = -(16 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
         
         // Añadir más variación aleatoria para llenar completamente
-        const randomRadius = Math.random() * 30; // Más área cubierta
+        const randomRadius = Math.random() * 10; // Más área cubierta
         const randomAngle = Math.random() * Math.PI * 2;
         
         hearts.push({
