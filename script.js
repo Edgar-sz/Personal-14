@@ -160,7 +160,7 @@ function growTree() {
     const trunkHeight = canvasHeight * 1; // AÚN MÁS GRANDE - 70% de la página
     
     // 🎯 Ajustar aquí para mover los corazones más ABAJO en el eje Y
-    const treeTop = trunkY - trunkHeight + 300; // +100 mueve TODO más abajo
+    const treeTop = trunkY - trunkHeight + 200; // +100 mueve TODO más abajo
     // Aumenta el número para mover MÁS abajo (ej: +150, +200)
     // Disminuye el número para mover menos abajo (ej: +50, +0)
     
@@ -243,7 +243,7 @@ function generateTreeStructure(centerX, centerY) {
         const y = -(16 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
         
         // Añadir más variación aleatoria para llenar completamente
-        const randomRadius = Math.random() * 15; // Más área cubierta
+        const randomRadius = Math.random() * 25; // Más área cubierta
         const randomAngle = Math.random() * Math.PI * 2;
         
         hearts.push({
