@@ -231,7 +231,7 @@ function drawTrunk(x, y, height, slideProgress = 1) {
 // Generar estructura de corazones del árbol en forma de corazón
 function generateTreeStructure(centerX, centerY) {
     const isMobile = window.innerWidth <= 768;
-    const scale = isMobile ? 0.8 : 1.3; // Más grande
+    const scale = isMobile ? 0.8 : 1; // Más grande
     const heartCount = isMobile ? 500 : 2000; // MUCHOS MÁS CORAZONES
     
     // Generar corazones en forma de corazón grande con múltiples capas
@@ -243,14 +243,14 @@ function generateTreeStructure(centerX, centerY) {
         const y = -(16 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
         
         // Añadir más variación aleatoria para llenar completamente
-        const randomRadius = Math.random() * 20; // Más área cubierta
+        const randomRadius = Math.random() * 30; // Más área cubierta
         const randomAngle = Math.random() * Math.PI * 2;
         
         hearts.push({
             x: centerX + (x + Math.cos(randomAngle) * randomRadius) * scale * 5,
             y: centerY + (y + Math.sin(randomAngle) * randomRadius) * scale * 5,
-            size: 10 + Math.random() * 20, // Variedad de tamaños
-            baseSize: 10 + Math.random() * 20, // 🎯 NUEVO: Tamaño base para respiración
+            size: 10 + Math.random() * 30, // Variedad de tamaños
+            baseSize: 10 + Math.random() * 30, // 🎯 NUEVO: Tamaño base para respiración
             color: HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)],
             rotation: Math.random() * Math.PI * 2,
             opacity: 0,
