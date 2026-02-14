@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el Amor de Mi Vida ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla inicial con corazón interactivo -->
+    <div id="initialScreen" class="initial-screen">
+        <div class="start-heart" id="startHeart">
+            <svg viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            </svg>
+        </div>
+        <p class="click-text">Haz click en el corazón</p>
+    </div>
+
+    <!-- Canvas para el árbol de corazones -->
+    <canvas id="treeCanvas"></canvas>
+
+    <!-- Contenedor de texto romántico -->
+    <div id="romanticText" class="romantic-text hidden">
+        <h1 class="love-title" id="titleText"></h1>
+        <p class="love-message" id="messageText"></p>
+        
+        <div class="counter-container">
+            <p class="counter-label" id="counterLabel"></p>
+            <div class="counter" id="loveCounter">
+                <span class="counter-item">
+                    <span class="counter-value" id="days">0</span>
+                    <span class="counter-unit">días</span>
+                </span>
+                <span class="counter-item">
+                    <span class="counter-value" id="hours">0</span>
+                    <span class="counter-unit">horas</span>
+                </span>
+                <span class="counter-item">
+                    <span class="counter-value" id="minutes">0</span>
+                    <span class="counter-unit">minutos</span>
+                </span>
+                <span class="counter-item">
+                    <span class="counter-value" id="seconds">0</span>
+                    <span class="counter-unit">segundos</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

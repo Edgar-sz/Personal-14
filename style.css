@@ -1,0 +1,274 @@
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #f5efe7;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ============================================
+   PANTALLA INICIAL
+   ============================================ */
+.initial-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #f5efe7;
+    transition: opacity 0.8s ease-out;
+}
+
+.initial-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Corazón inicial con animación de latido */
+.start-heart {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    transition: transform 0.3s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.start-heart:hover {
+    transform: scale(1.1);
+}
+
+.start-heart:active {
+    transform: scale(0.95);
+}
+
+.start-heart svg {
+    width: 100%;
+    height: 100%;
+    fill: #e74c3c;
+    filter: drop-shadow(0 4px 8px rgba(231, 76, 60, 0.3));
+    pointer-events: none;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+.click-text {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #8b6f47;
+    opacity: 0.8;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   CANVAS DEL ÁRBOL
+   ============================================ */
+#treeCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   TEXTO ROMÁNTICO
+   ============================================ */
+.romantic-text {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 40%;
+    z-index: 100;
+    color: #5a4a3a;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.romantic-text.hidden {
+    opacity: 0;
+}
+
+.romantic-text.visible {
+    opacity: 1;
+}
+
+.love-title {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #c0504d;
+    font-style: italic;
+}
+
+.love-message {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #6b5b4f;
+}
+
+/* Efecto de escritura */
+.typewriter {
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #c0504d;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ============================================
+   CONTADOR DE AMOR
+   ============================================ */
+.counter-container {
+    margin-top: 40px;
+}
+
+.counter-label {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #8b7355;
+    font-style: italic;
+}
+
+.counter {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
+}
+
+.counter-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c0504d;
+    font-family: 'Courier New', monospace;
+}
+
+.counter-unit {
+    font-size: 0.9rem;
+    color: #8b7355;
+    margin-top: 5px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .romantic-text {
+        max-width: 90%;
+        left: 5%;
+        top: 10%;
+        transform: none;
+    }
+
+    .love-title {
+        font-size: 1.8rem;
+    }
+
+    .love-message {
+        font-size: 1.1rem;
+    }
+
+    .counter {
+        gap: 10px;
+    }
+
+    .counter-item {
+        min-width: 70px;
+        padding: 10px 15px;
+    }
+
+    .counter-value {
+        font-size: 1.5rem;
+    }
+
+    .counter-unit {
+        font-size: 0.8rem;
+    }
+
+    .start-heart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .click-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .love-title {
+        font-size: 1.5rem;
+    }
+
+    .love-message {
+        font-size: 1rem;
+    }
+
+    .counter-value {
+        font-size: 1.2rem;
+    }
+}
